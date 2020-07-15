@@ -29,4 +29,10 @@ class Api::ApartmentsController < ApplicationController
     @apartment.save
     render 'show.json.jb'
   end
+
+  def destroy
+    @apartment = Apartment.find_by(id: params[:id])
+    @apartment.destroy
+    render json: {message: "You have knocked this bad boy down with a wrecking ball"}
+  end
 end
