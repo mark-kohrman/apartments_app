@@ -18,4 +18,15 @@ class Api::ApartmentsController < ApplicationController
     @apartment.save
     render 'show.json.jb'
   end
+
+  def update
+    @apartment = Apartment.find_by(id: params[:id])
+    @apartment.update(
+      neighborhood: params[:neighborhood] || @apartment.neighborhood,
+      building_type: params[:building_type] || @apartment.building_type,
+      rent: params[:rent] || @apartment.rent
+    )
+    @apartment.save
+    render 'show.json.jb'
+  end
 end
