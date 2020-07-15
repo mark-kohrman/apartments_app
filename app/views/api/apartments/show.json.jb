@@ -1,0 +1,7 @@
+{
+  id: @apartment.id,
+  neighborhood: @apartment.neighborhood,
+  building_type: @apartment.building_type,
+  rent: @apartment.rent
+
+}
